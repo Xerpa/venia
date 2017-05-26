@@ -1,4 +1,4 @@
-(defproject vincit/venia "0.1.2-SNAPSHOT"
+(defproject xerpa/venia "0.1.2"
   :description "Clojure(Script) graphql client"
   :url "https://github.com/Vincit/venia"
   :license {:name "Eclipse Public License"
@@ -6,6 +6,8 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha16" :scope "provided"]
                  [org.clojure/clojurescript "1.9.521" :scope "provided"]]
   :plugins [[lein-doo "0.1.7"]]
+  :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
+                                    :sign-releases false}]]
   :clean-targets ^{:protect false} ["resources" "target"]
   :aliases {"test" ["do" "test" ["doo" "once" "phantom" "test"]]}
   :cljsbuild {:builds [{:id           "test"
