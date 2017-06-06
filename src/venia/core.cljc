@@ -60,6 +60,8 @@
     (->> (for [[type value] fields]
            (condp = type
              :venia/field (name value)
+             :venia/nested-field-arg-only (str (name (:venia/nested-field-root value))
+                                               (str "(" (arguments->str (:args value)) ")"))
              :venia/nested-field (str (name (:venia/nested-field-root value))
                                       (when (:args value)
                                         (str "(" (arguments->str (:args value)) ")"))

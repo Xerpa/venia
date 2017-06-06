@@ -18,6 +18,8 @@
 
 (s/def :venia/query-name keyword?)
 (s/def :venia/fields (s/conformer #(or-conformer % (s/or :fields (s/coll-of (s/or :venia/field keyword?
+                                                                                  :venia/nested-field-arg-only (s/cat :venia/nested-field-root keyword?
+                                                                                                                      :args :venia/args)
                                                                                   :venia/nested-field (s/cat :venia/nested-field-root keyword?
                                                                                                              :args (s/? :venia/args)
                                                                                                              :venia/nested-field-children :venia/fields)))
